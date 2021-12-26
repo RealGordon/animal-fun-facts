@@ -5,7 +5,10 @@ import { animals } from './animal.js';
 const title="";
 const showBackground =true;
 const e = React.createElement;
-const background=e("img", {alt:"ocean" ,src:"https://a1dd021c8e8441ce9be50980f382740b.cc-propeller.cloud/images/ocean.jpg"});
+const background=e("img", {alt:"ocean" ,
+//src:"https://a1dd021c8e8441ce9be50980f382740b.cc-propeller.cloud/images/ocean.jpg"
+src: ((imagesD[0] !==undefined)?"images/ocean.jpg":"")
+});
 const names=Object.getOwnPropertyNames(animals);
 
 const images=new Array(names.length);
@@ -22,7 +25,8 @@ role: "button",
 key:animal,
 className:"animal",
 alt:animal,
-src: animals[animal].image,
+//src: animals[animal].image,
+src: (( imagesD[i+1] !==undefined)?("images/"+imagesN[i+1]):""),
 "aria-label": animal,
 role: "button",
 //onClick: displayFact,
