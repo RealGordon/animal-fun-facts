@@ -10,21 +10,7 @@ const names=Object.getOwnPropertyNames(animals);
 
 const images=new Array(names.length);
 for(const [i,animal] of names.entries()){
-images[i]=e('img',{
-key:animal,
-className:"animal",
-alt:animal,
-src: animals[animal].image,
-"aria-label": animal,
-role: "button",
-onClick: displayFact
-}
-)
-
-
-// TODO: ALTERNATIVE using picture tag
-/*
-e("picture",{
+images[i]=e("picture",{
 key:animal,
 className:"animal",
 "aria-label": animal,
@@ -42,7 +28,7 @@ role: "button",
 //onClick: displayFact,
 }
 ));
-*/
+
 }
 
 
@@ -57,6 +43,10 @@ e("div",null,(showBackground &&
 
 function displayFact(e){
   const name=e.target.alt;
+  if(name===undefined){
+	if (e.preventDefault) e.preventDefault();
+return false;  
+  }
   const ranIndex=Math.floor(Math.random()*3);
 const fact=animals[name].facts[ranIndex];
 document.getElementById('fact').textContent=fact;
