@@ -5,12 +5,26 @@ import { animals } from './animal.js';
 const title="";
 const showBackground =true;
 const e = React.createElement;
-const background=e("img", {alt:"ocean" ,src:"/images/ocean.jpg"});
+const background=e("img", {alt:"ocean" ,src:"https://a1dd021c8e8441ce9be50980f382740b.cc-propeller.cloud/images/ocean.jpg"});
 const names=Object.getOwnPropertyNames(animals);
 
 const images=new Array(names.length);
 for(const [i,animal] of names.entries()){
-images[i]=e("picture",{
+images[i]=e('img',{
+key:animal,
+className:"animal",
+alt:animal,
+src: animals[animal].image,
+"aria-label": animal,
+role: "button",
+onClick: displayFact
+}
+)
+
+
+// TODO: ALTERNATIVE using picture tag
+/*
+e("picture",{
 key:animal,
 className:"animal",
 "aria-label": animal,
@@ -28,6 +42,7 @@ role: "button",
 //onClick: displayFact,
 }
 ));
+*/
 }
 
 
@@ -37,7 +52,7 @@ e("div",null,
 e("div",null,(showBackground &&
   background),
   e('p',{ id:"fact"}),
-  e("div" ,{className:"animals",onClick: displayFact},images),
+  e("div" ,{className:"animals"},images),
 ));
 
 function displayFact(e){
