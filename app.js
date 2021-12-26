@@ -17,7 +17,7 @@ className:"animal",
 role: "button",
 
 },
-	e("source",{srcset: animals[animal].image,type:"image/jpeg",media:"(min-width: 30px)"}),
+	e("source",{srcSet: animals[animal].image,type:"image/jpeg",media:"(min-width: 30px)"}),
 	e('img',{
 key:animal,
 className:"animal",
