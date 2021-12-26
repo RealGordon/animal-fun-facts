@@ -42,7 +42,7 @@ e("div",null,
 e("div",null,(showBackground &&
   background),
   e('p',{ id:"fact"}),
-  e("div" ,{className:"animals"},images),
+  e("div" ,{className:"animals",onClick: displayFact},images),
 ));
 
 function displayFact(e){
@@ -61,3 +61,4 @@ return false;
 ReactDOM.render(animalFacts
   ,document.getElementById("root")
 );
+window.animalFacts=animalFacts;
