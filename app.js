@@ -1,5 +1,5 @@
 'use strict';
-import { animals } from './animals.js';
+import { animals } from './animal.js';
 //import  React  from 'react';
 //import ReactDOM from 'react-dom';
 const title="";
