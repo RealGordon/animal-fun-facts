@@ -3,6 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
+	<script>	
+const imagesN=["ocean.jpg","dolphin.jpg",
+ "lobster.jpg","starfish.jpg"];
+const imagesD=new Array(4);
+imagesN.forEach(
+ (v,i)=>{
+ (imagesD[i]=new Image()).src="images/"+v;
+ });
+	</script>
   </head>
   <body>
     <div id="root"></div>
@@ -13,22 +22,8 @@
 	<script src="/app.compiled.js"></script>
   -->
  <!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>-->
- <script>
-  const imagesN=["ocean.jpg","dolphin.jpg",
- "lobster.jpg","starfish.jpg"];
- </script>
-    <script   src="app.js" type="module"></script>
-<script  type="text/javascript">
-const imagesD=new Array(4);
- imagesN.forEach(
- (v,i)=>{
- if(i===0)return;
- (imagesD[i]=new Image()).src="images/"+v;
- ReactDOM.render(animalFacts
-  ,document.getElementById("root")
-);
- });
+ 
+    <script defer  src="app.js" type="module"></script>
 
- </script>
   </body>
 </html>

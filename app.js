@@ -2,16 +2,19 @@
 import { animals } from './animal.js';
 //import  React  from 'react';
 //import ReactDOM from 'react-dom';
+
 const title="";
 const showBackground =true;
 const e = React.createElement;
+
 const background=e("img", {alt:"ocean" ,
 //src:"https://a1dd021c8e8441ce9be50980f382740b.cc-propeller.cloud/images/ocean.jpg"
-src: ((imagesD[0] !==undefined)?"images/ocean.jpg":"")
+src: ((imagesD[0])?"images/ocean.jpg":"")
 });
 const names=Object.getOwnPropertyNames(animals);
 
 const images=new Array(names.length);
+
 for(const [i,animal] of names.entries()){
 images[i]=e("picture",{
 key:animal,
@@ -26,7 +29,7 @@ key:animal,
 className:"animal",
 alt:animal,
 //src: animals[animal].image,
-src: (( imagesD[i+1] !==undefined)?("images/"+imagesN[i+1]):""),
+src: (( imagesD[i+1])?("images/"+imagesN[i+1]):""),
 "aria-label": animal,
 role: "button",
 //onClick: displayFact,
@@ -61,4 +64,4 @@ return false;
 ReactDOM.render(animalFacts
   ,document.getElementById("root")
 );
-window.animalFacts=animalFacts;
+
