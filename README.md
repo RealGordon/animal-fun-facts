@@ -5,4 +5,4 @@ In this project, I built a program that allows users to click an animal on the s
 find the site here  (**reload page 2 or 3 times to see all images**) => [animal-fun-facts](https://realgordon.github.io/animal-fun-facts/)
 
 **Snapshot of the site**:
-[!plot](images/react_jsx_project_preview.gif)
+![plot](images/react_jsx_project_preview.gif)
